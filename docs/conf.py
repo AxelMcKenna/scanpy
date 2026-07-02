@@ -140,7 +140,8 @@ pygments_dark_style = "native"
 katex_prerender = shutil.which(NODEJS_BINARY) is not None
 
 intersphinx_mapping = dict(
-    anndata=("https://anndata.scverse.org/en/stable/", None),
+    # Needs latest until `.acc` is released in 0.13
+    anndata=("https://anndata.scverse.org/en/latest/", None),
     bbknn=("https://bbknn.readthedocs.io/en/latest/", None),
     cuml=("https://docs.rapids.ai/api/cuml/stable/", None),
     cycler=("https://matplotlib.org/cycler/", None),
@@ -149,6 +150,8 @@ intersphinx_mapping = dict(
     decoupler=("https://decoupler.readthedocs.io/en/stable/", None),
     fast_array_utils=("https://fast-array-utils.scverse.org/en/stable/", None),
     h5py=("https://docs.h5py.org/en/stable/", None),
+    holoviews=("https://holoviews.org/", None),
+    hv_anndata=("https://hv-anndata.readthedocs.io/en/latest/", None),
     zarr=("https://zarr.readthedocs.io/en/stable/", None),
     ipython=("https://ipython.readthedocs.io/en/stable/", None),
     igraph=("https://python.igraph.org/en/stable/api/", None),
