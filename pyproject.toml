@@ -289,7 +289,7 @@ markers = [
     "gpu: tests that use a GPU (unused, required by anndata.tests.helpers)",
     "array_api: tests that use array_api (unused, required by anndata.tests.helpers)",
 ]
-norecursedirs = [ "tests/_images" ]
+norecursedirs = [ "tests/_images", "src/scanpy/plotting/_v2" ]
 strict = true
 testpaths = [ "./tests", "./ci", "scanpy" ]
 
