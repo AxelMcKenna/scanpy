@@ -8,8 +8,7 @@ import scipy as sp
 from natsort import natsorted
 
 from .. import logging as logg
-from .._keys import _embedding_keys, _existing_preset_keys
-from .._settings import Default, settings
+from .._keys import _existing_preset_keys
 from .._utils.random import _LegacyRng
 from ..neighbors import Neighbors, OnFlySymMatrix
 
@@ -19,36 +18,7 @@ if TYPE_CHECKING:
     from anndata import AnnData
 
 
-def _diffmap(
-    adata: AnnData,
-    n_comps: int = 15,
-    *,
-    neighbors_key: str | None,
-    key_added: str | None | Default,
-    rng: np.random.Generator,
-) -> None:
-    if isinstance(key_added, Default):
-        key_added = settings.preset.diffmap.key_added
-    keys = _embedding_keys("diffmap", key_added)
-    start = logg.info(f"computing Diffusion Maps using {n_comps=}(=n_dcs)")
-    dpt = DPT(adata, neighbors_key=neighbors_key)
-    dpt.compute_transitions()
-    dpt.compute_eigen(n_comps=n_comps, rng=rng)
-    adata.obsm[keys.obsm] = dpt.eigen_basis
-    adata.uns[keys.uns], acc = (
-        (dpt.eigen_values, "")
-        if key_added is None
-        else (dict(evals=dpt.eigen_values), "['evals']")
-    )
-    logg.info(
-        "    finished",
-        time=start,
-        deep=(
-            "added\n"
-            f"    {keys.obsm!r}, diffmap coordinates (adata.obsm)\n"
-            f"    {keys.uns!r}{acc}, eigenvalues of transition matrix (adata.uns)"
-        ),
-    )
+__all__ = ["DPT", "dpt"]
 
 
 def dpt(
