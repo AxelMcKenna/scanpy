@@ -283,6 +283,7 @@ nitpick_ignore = [
     ("py:class", "numpy._typing._dtype_like._DTypeDict"),
     # Will probably be documented
     ("py:class", "scanpy.neighbors.OnFlySymMatrix"),
+    ("py:class", "scanpy.pl.BasePlot"),
     # Currently undocumented
     # https://github.com/mwaskom/seaborn/issues/1810
     ("py:class", "seaborn.matrix.ClusterGrid"),

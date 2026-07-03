@@ -151,7 +151,7 @@ def test_diffmap_key_added(
         pytest.param(sc.Preset.ScanpyV1, "X_draw_graph_fr", "draw_graph", id="v1"),
         pytest.param(
             *(sc.Preset.ScanpyV2Preview, "graph_fr", "graph_fr"),
-            marks=needs.skmisc,
+            marks=needs.scanpy2,
             id="v2",
         ),
     ],
