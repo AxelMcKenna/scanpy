@@ -267,9 +267,6 @@ texinfo_documents = [
 qualname_overrides = {
     "pathlib._local.Path": "pathlib.Path",
     "sklearn.neighbors._dist_metrics.DistanceMetric": "sklearn.metrics.DistanceMetric",
-    "scanpy.plotting._matrixplot.MatrixPlot": "scanpy.pl.MatrixPlot",
-    "scanpy.plotting._dotplot.DotPlot": "scanpy.pl.DotPlot",
-    "scanpy.plotting._stacked_violin.StackedViolin": "scanpy.pl.StackedViolin",
     "pandas.core.series.Series": "pandas.Series",
     # https://github.com/pandas-dev/pandas/issues/63810
     "pandas.api.typing.aliases.AnyArrayLike": ("doc", "pandas:reference/aliases"),
@@ -285,15 +282,13 @@ nitpick_ignore = [
     ("py:class", "numpy._typing._dtype_like._SupportsDType"),
     ("py:class", "numpy._typing._dtype_like._DTypeDict"),
     # Will probably be documented
-    ("py:class", "scanpy._settings.Verbosity"),
     ("py:class", "scanpy.neighbors.OnFlySymMatrix"),
-    ("py:class", "scanpy.plotting.legacy._baseplot_class.BasePlot"),
     # Currently undocumented
     # https://github.com/mwaskom/seaborn/issues/1810
     ("py:class", "seaborn.matrix.ClusterGrid"),
     ("py:class", "samalg.SAM"),
     # Won’t be documented
-    ("py:class", "scanpy.plotting.legacy._utils._AxesSubplot"),
+    ("py:class", "scanpy.pl._AxesSubplot"),
     ("py:class", "scanpy._utils.Empty"),
     ("py:class", "numpy.random.mtrand.RandomState"),
     ("py:class", "scanpy.neighbors._types.KnnTransformerLike"),

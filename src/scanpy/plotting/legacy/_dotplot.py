@@ -6,7 +6,7 @@ import numpy as np
 from matplotlib import colormaps
 
 from ... import logging as logg
-from ..._compat import warn
+from ..._compat import set_module, warn
 from ..._settings import Default, settings
 from ..._utils import _doc_params
 from ._baseplot_class import BasePlot, doc_common_groupby_plot_args
@@ -33,6 +33,7 @@ if TYPE_CHECKING:
     from ._utils import ColorLike, _AxesSubplot
 
 
+@set_module("scanpy.pl")
 @_doc_params(common_plot_args=doc_common_plot_args)
 class DotPlot(BasePlot):
     """Allows the visualization of two values that are encoded as dot size and color.

@@ -16,7 +16,7 @@ from matplotlib.figure import SubplotParams
 from matplotlib.patches import Circle
 
 from ... import logging as logg
-from ..._compat import warn
+from ..._compat import set_module, warn
 from ..._settings import Default, settings
 from ..._utils import NeighborsView, _get_basis_key
 from . import mpl_settings, palettes
@@ -98,6 +98,7 @@ type _LegendLoc = Literal[
 type ColorLike = str | tuple[float, float, float] | tuple[float, float, float, float]
 
 
+@set_module("scanpy.pl")
 class _AxesSubplot(Axes, axes.SubplotBase):
     """Intersection between Axes and SubplotBase: Has methods of both."""
 

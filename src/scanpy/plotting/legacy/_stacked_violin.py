@@ -7,7 +7,7 @@ from matplotlib import colormaps
 from matplotlib.colors import is_color_like
 
 from ... import logging as logg
-from ..._compat import warn
+from ..._compat import set_module, warn
 from ..._settings import Default, settings
 from ..._utils import _doc_params
 from ._baseplot_class import BasePlot, doc_common_groupby_plot_args
@@ -33,6 +33,7 @@ if TYPE_CHECKING:
     from ._utils import DensityNorm, _AxesSubplot
 
 
+@set_module("scanpy.pl")
 @_doc_params(common_plot_args=doc_common_plot_args)
 class StackedViolin(BasePlot):
     """Stacked violin plots.
@@ -99,7 +100,7 @@ class StackedViolin(BasePlot):
     >>> sc.pl.StackedViolin(
     ...     adata, markers, groupby="bulk_labels", dendrogram=True
     ... )  # doctest: +ELLIPSIS
-    <scanpy.plotting._stacked_violin.StackedViolin object at 0x...>
+    <scanpy.pl.StackedViolin object at 0x...>
 
     Using var_names as dict:
 
@@ -107,7 +108,7 @@ class StackedViolin(BasePlot):
     >>> sc.pl.StackedViolin(
     ...     adata, markers, groupby="bulk_labels", dendrogram=True
     ... )  # doctest: +ELLIPSIS
-    <scanpy.plotting._stacked_violin.StackedViolin object at 0x...>
+    <scanpy.pl.StackedViolin object at 0x...>
 
     """
 
